@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <script defer type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <div data-dialog="success">
+      <article class="dialog__success">
+        <i class="bx bxs-check-circle"></i>
+        <h2>Payment Successful</h2>
+        <p>
+          Thank you for using our service, your payment request will shortly
+          arrive.
+        </p>
+        <button class="button__primary" data-dialog-collapse>Close</button>
+      </article>
+    </div>
+    <form data-form="paymentDetails" class="container">
+      <h1 class="title">Payment Details</h1>
+
+      <!-- ==== Contact Information -->
+      <h2 class="heading heading-contact">Contact Information</h2>
+      <!-- ==== Name Input ==== -->
+      <div class="form-input-container">
+        <label class="form-label">Name</label>
+        <p data-form-error="name"></p>
+        <input
+          type="text"
+          placeholder="Alexia"
+          class="form-input"
+          data-form-input="name"
+          data-form-rule="required"
+        />
+      </div>
+      <!-- ==== Email Input ==== -->
+      <div class="form-input-container">
+        <label class="form-label">Email</label>
+        <p data-form-error="email"></p>
+        <input
+          type="text"
+          placeholder="example@yourmail.com"
+          class="form-input"
+          data-form-input="email"
+          data-form-rule="required,email"
+        />
+      </div>
+      <!-- ==== Age Input ==== -->
+      <div class="form-input-container">
+        <label class="form-label">Gender</label>
+        <p data-form-error="gender"></p>
+        <input
+          type="text"
+          placeholder="Female"
+          class="form-input"
+          data-form-input="gender"
+          data-form-rule="required,enum:male|female"
+        />
+        <p class="input-hint">This field must either be "Male" or "Female"</p>
+      </div>
+
+      <!-- ==== Plans ==== -->
+      <h2 class="heading heading-plans">Select Plans</h2>
+
+      <div class="plan-card__container" data-select="plans">
+        <article
+          class="plan-card plan--card__one-time-payment"
+          data-select-option="One-Time Payment"
+          tabindex="0"
+        >
+          <i class="bx bx-coin-stack"></i>
+          <h3>One-Time Payment</h3>
+          <p>Charge users a one-time payment fee to access the content</p>
+        </article>
+
+        <article
+          class="plan-card plan--card__membership"
+          data-select-option="Membership"
+          tabindex="0"
+        >
+          <i class="bx bx-credit-card-alt"></i>
+          <h3>Membership</h3>
+          <p>Split the full bundle price over several monthly payments</p>
+        </article>
+      </div>
+
+      <!-- ==== Submission ==== -->
+      <h2 class="heading heading-submission">Amount Submission</h2>
+      <!-- === Amount Input -->
+      <div class="form-input-container">
+        <label class="form-label">Amount</label>
+        <p data-form-error="amount"></p>
+        <input
+          type="text"
+          placeholder="IDR 4305.234"
+          class="form-input"
+          data-form-input="amount"
+          data-form-rule="required,number"
+        />
+      </div>
+      <!-- === Beneficiary Input -->
+      <div class="form-input-container">
+        <label class="form-label">Beneficiary</label>
+        <p data-form-error="beneficiary"></p>
+        <input
+          type="text"
+          placeholder="Carla"
+          class="form-input"
+          data-form-input="beneficiary"
+          data-form-rule="required"
+        />
+      </div>
+
+      <div class="form-input-container company-name">
+        <label class="form-label">Company Name</label>
+        <p data-form-error="companyName"></p>
+        <input
+          type="text"
+          placeholder="BNCC Limited."
+          class="form-input"
+          data-form-input="companyName"
+          data-form-rule="required"
+        />
+        <p class="company-name__hint">
+          Incoming payments are placed in a secure recieving account to keep the
+          destination account anonumously
+        </p>
+      </div>
+
+      <div class="expiry-date">
+        <i class="bx bx-time-five"></i>
+        Payment link expires on December 11, 2023
+      </div>
+      <button class="button__secondary clear-button">Clear</button>
+      <button class="button__primary submit-button">Request Payment</button>
+    </form>
+  </body>
+</html>

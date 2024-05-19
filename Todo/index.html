@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <div class="cta">
+        <div class="title">
+          Todo
+          <div class="label counter">3</div>
+        </div>
+        <div class="filter" data-select-container="todo">
+          <div class="filter-wrapper">
+            <button data-option="completed">Completed</button>
+            <button data-option="onGoing">On Going</button>
+            <button data-option="all" class="selected">All</button>
+          </div>
+        </div>
+      </div>
+      <ul data-todo-container="todo"></ul>
+      <form class="new-todo" data-form="newTask">
+        <div class="input-title">
+          <input
+            type="text"
+            data-input-title
+            placeholder="Task Name Here..."
+            data-form-input="title"
+            data-form-rule="required"
+          />
+          <label data-form-error="title"></label>
+        </div>
+        <div class="input-content">
+          <textarea
+            data-input-content
+            placeholder="Description"
+            data-form-input="content"
+            data-form-rule="required"
+          ></textarea>
+          <label data-form-error="content"></label>
+        </div>
+
+        <div class="due-date-input">
+          <p class="label">Due Date</p>
+          <input type="date" data-input-due-date />
+          <div></div>
+          <p class="date-form-error-msg">This field is required</p>
+        </div>
+        <button class="btn-secondary clear-button">Clear</button>
+        <button class="btn-primary create-button">Create Task</button>
+      </form>
+    </article>
+  </body>
+</html>
